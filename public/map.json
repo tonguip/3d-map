@@ -1,0 +1,36 @@
+{
+    "version": 8,
+    "name": "CustomMapStyle",
+    "sources": {
+        "custom-tiles": {
+            "type": "raster",
+            "tiles": [
+                "http://localhost:3000/api/v1/tiles?&x={x}&y={y}&z={z}&provider=googleSatellite"
+            ],
+            "tileSize": 256
+        },
+        "maptiler_attribution": {
+            "attribution": "<a href=\"https://www.maptiler.com/copyright/\" target=\"_blank\">&copy; MapTiler</a> <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">&copy; OpenStreetMap contributors</a>",
+            "type": "raster"
+        }
+    },
+    "layers": [
+        {
+            "id": "background",
+            "type": "background",
+            "paint": {
+                "background-color": "#f0f0f0"
+            }
+        },
+        {
+            "id": "custom-tiles-layer",
+            "type": "raster",
+            "source": "custom-tiles",
+            "minzoom": 0,
+            "maxzoom": 22
+        }
+    ],
+    "metadata": {
+        "maptiler:copyright": "This style was generated on MapTiler Cloud. Usage outside of MapTiler Cloud requires valid MapTiler Data Package: https://www.maptiler.com/data/package/ -- please contact us."
+    }
+}
